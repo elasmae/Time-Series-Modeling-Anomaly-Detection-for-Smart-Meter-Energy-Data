@@ -1,0 +1,28 @@
+
+data:
+  raw_dir: "data/raw/hhblock_dataset"
+  processed_file: "data/processed/merged_clean.csv"
+
+modeling:
+  window_size: 48
+  lstm:
+    units: 64
+    loss: "mse"
+    optimizer: "adam"
+    epochs: 10
+    batch_size: 32
+  autoencoder:
+    units: 64
+    loss: "mae"
+    optimizer: "adam"
+    epochs: 10
+    batch_size: 32
+
+forecast:
+  arima:
+    order: [2, 1, 2]
+  sarima:
+    order: [1, 1, 1]
+    seasonal_order: [1, 1, 1, 7]
+  prophet:
+    periods: 30

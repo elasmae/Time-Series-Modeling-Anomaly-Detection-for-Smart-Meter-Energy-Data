@@ -1,0 +1,18 @@
+
+# Ignorer les fichiers temporaires Python
+__pycache__/
+*.py[cod]
+*.so
+*.ipynb_checkpoints
+
+# Données lourdes locales
+data/processed/merged_clean.csv
+data/processed/merged_enriched.csv
+models/*.h5
+models/*.pkl
+*.csv
+*.zip
+
+# Fichiers système
+.DS_Store
+.env
