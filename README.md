@@ -1,14 +1,44 @@
+# Smart Meter Time Series Modeling and Anomaly Detection
 
-#  Time Series Modeling & Anomaly Detection
+A machine learning pipeline for forecasting and anomaly detection on high-frequency smart meter electricity consumption data.
 
-This project is an **end-to-end time series modeling pipeline** including:
-- Statistical Models: ARIMA, SARIMA, Holt-Winters, Prophet
-- Deep Learning: LSTM, AutoEncoder
-- Anomaly Detection: AutoEncoder, One-Class SVM, Isolation Forest
+## Overview
 
+Electricity consumption data is inherently temporal, noisy, and influenced by seasonal and behavioral patterns.  
+This work aims to:
 
+- Forecast short- and medium-term energy consumption
+- Detect abnormal usage patterns
+- Compare statistical and deep learning time-series approaches within a unified pipeline
 
-##  Structure
+## Dataset
+
+The dataset contains half-hourly electricity consumption records from multiple smart meter clients.  
+Raw data is transformed into a timestamped long-format time series for modeling.
+
+## Methodology
+
+### Statistical Forecasting
+- ARIMA
+- SARIMA
+- Holt-Winters
+- Prophet
+
+### Deep Learning
+- LSTM sequence modeling
+- AutoEncoder reconstruction modeling
+
+### Anomaly Detection
+- AutoEncoder reconstruction error
+- Isolation Forest
+- One-Class SVM
+
+## Evaluation
+
+Forecasting models are evaluated using regression metrics such as MAE and RMSE.  
+Anomaly detection models rely on reconstruction errors and unsupervised anomaly scoring mechanisms.
+
+## Project Structure
 
 ```
 .
@@ -22,19 +52,15 @@ This project is an **end-to-end time series modeling pipeline** including:
 └── requirements.txt    # Python dependencies
 ```
 
----
-
-##  Quickstart
+## Quickstart
 
 ```bash
-# Build container
+# Build Docker container
 make docker-build
 
-# Run in Jupyter
+# Run Jupyter environment
 make docker-run
 
-# Or local training
+# Train models locally
 make train
 ```
-
-
